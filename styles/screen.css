@@ -1,50 +1,61 @@
+:root {
+    --bg-color: #1c1c1c;
+    --card-bg: #3a3a3a;
+    --text-color: #fff;
+    --hover-scale: 1.2;
+}
+
 body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: Helvetica, sans-serif;
-    color: #EAE8FF;
-    background: #2D3142;
-    padding: 0 40px;
     text-align: center;
-}
-
-nav {
-    margin: 40px auto 0 auto;
-    width: 250px;
-    border-radius: 50px;
-    background: #212431;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    list-style-type: none;
-    margin: 0;
-}
-
-nav ul li a {
-    display: inline-block;
     padding: 20px;
-    color: #EAE8FF;
-    text-decoration: none;
-    font-size: 1.2em;
 }
 
-h1 {
-    font-size: 8em;
-    letter-spacing: -2px;
+
+.solar-system {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    align-items: start;
+    max-width: 900px;
+    margin: auto;
 }
 
-h1 strong {
-    background: rgb(34,193,195);
-    background: linear-gradient(45deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.sun, .planet-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+    cursor: pointer;
 }
 
-img.about {
-    opacity: 0.5;
+.sun:hover, .planet-card:hover {
+    transform: scale(var(--hover-scale)) !important;
+}
+
+.sun-g {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, yellow, red);
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.planets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    justify-items: center;
+}
+.planet {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: auto;
 }
